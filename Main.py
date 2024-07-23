@@ -1,10 +1,6 @@
 import streamlit as st
-import pypandoc
-import pdfkit
-import os
-import pandas as pd
-import numpy as np
-import plotly.express as px
+
+
 
 st.set_page_config(page_title="Luciana Izquierdo Thesis", layout="wide", page_icon="🔬", initial_sidebar_state="expanded")
 
@@ -17,19 +13,6 @@ IMAGE_BANNER = "media/COVID_BANNER.png"
 # create change font size button
 # add images
 # sidebar
-def convert_docx_to_pdf(docx_path):
-    # Convert DOCX to PDF using pypandoc
-    output_pdf = "output.pdf"
-    pypandoc.convert_file(docx_path, 'pdf', outputfile=output_pdf)
-
-    # Read the PDF content
-    with open(output_pdf, "rb") as f:
-        pdf_content = f.read()
-
-    # Clean up temporary file
-    os.remove(output_pdf)
-
-    return pdf_content
 #Define function to load media
 def load_media(column, file_path, caption):
     with column:
